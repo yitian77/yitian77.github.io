@@ -1,34 +1,3 @@
----
-home: true
-title: BlockZ Wiki
-heroText: BlockZ
-tagline: Minecraft Forge 1.20.1 的硬核生存模组文档站
-actions:
-  - text: 快速开始
-    link: /getting-started.html
-    type: primary
-  - text: 系统总览
-    link: /systems.html
-  - text: 配置说明
-    link: /configuration.html
-highlights:
-  - header: 核心方向
-    description: 围绕 DayZ 风格库存、占格系统、医疗与体力、探头 / 趴下 / 相机表现，以及 TaCZ / Curios / Thirst 联动构建整体体验。
-    highlights:
-      - title: DayZ 风格库存
-        details: 自定义背包界面、装备布局、附近物品区与容器换皮共同形成核心交互体验。
-      - title: Grid 占格物品
-        details: 物品按宽高占据多个格位，容量管理不再只是“多几个格子”。
-      - title: 生存状态链
-        details: 体力、流血、骨折、感染、低健康视觉效果等机制共同塑造生存压力。
-      - title: 战术视角表现
-        details: 左右探头、越肩镜头、第一人称身体与趴下系统显著改变战斗节奏。
-      - title: 联机同步
-        details: 关键配置与状态采用服务端权威同步，减少客户端与服务器分裂。
-      - title: 模组兼容
-        details: 已围绕 Curios、TaCZ、Thirst 和菜单接管场景构建兼容策略。
----
-
 # BlockZ 是什么？
 
 BlockZ 不是单纯添加几个物品，而是在原版生存基础上重建了一套更偏拟真、更重视空间管理与战术姿态的玩法框架。
@@ -59,4 +28,3 @@ BlockZ 不是单纯添加几个物品，而是在原版生存基础上重建了�
 ## 当前站点定位
 
 该 Wiki 以当前项目源码与配置结构为基础整理，优先描述已经在项目中落地的系统。某些视觉表现或兼容细节属于持续演进中的内容，后续可以继续追加专题页。
-
