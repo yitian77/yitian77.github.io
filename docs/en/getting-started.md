@@ -49,5 +49,5 @@ This page is intended for first-time players, modpack authors, and server admini
 
 ## Read Next
 
-- If you are a player, continue with [Systems Overview](./systems.md).
-- If you build modpacks, also read [Configuration](./configuration.md) and [Compatibility and Architecture](./compatibility.md).
+- If you are a player, continue with [Systems Overview](/en/systems).
+- If you build modpacks, also read [Configuration](/en/configuration) and [Compatibility and Architecture](/en/compatibility).

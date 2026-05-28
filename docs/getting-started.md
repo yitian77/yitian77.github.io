@@ -71,5 +71,5 @@ title: 快速开始
 
 ## 接下来读什么？
 
-- 如果你是玩家：继续阅读 [系统总览](/systems.html)。
-- 如果你是整合包作者：建议同步阅读 [配置说明](/configuration.html) 与 [兼容与架构](/compatibility.html)。
+- 如果你是玩家：继续阅读 [系统总览](/systems)。
+- 如果你是整合包作者：建议同步阅读 [配置说明](/configuration) 与 [兼容与架构](/compatibility)。

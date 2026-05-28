@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
 
-      - name: VuePress Deploy
+      - name: VitePress Deploy
         uses: IT4Change/vuepress-build-and-deploy@master
         env:
           ACCESS_TOKEN: ${{ secrets.PERSONAL_SECRET }}
@@ -26,4 +26,4 @@ jobs:
           BUILD_SCRIPT: |
             npm install
             npm run build
-          BUILD_DIR: docs/.vuepress/dist/
+          BUILD_DIR: docs/.vitepress/dist/

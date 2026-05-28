@@ -1,32 +1,39 @@
 ---
-home: true
+layout: home
 title: BlockZ Wiki
-heroText: BlockZ
-tagline: Minecraft Forge 1.20.1 的硬核生存模组文档站
-actions:
-  - text: 快速开始
-    link: /getting-started.html
-    type: primary
-  - text: 系统总览
-    link: /systems.html
-  - text: 配置说明
-    link: /configuration.html
-highlights:
-  - header: 核心方向
-    description: 围绕 DayZ 风格库存、占格系统、医疗与体力、探头 / 趴下 / 相机表现，以及 TaCZ / Curios / Thirst 联动构建整体体验。
-    highlights:
-      - title: DayZ 风格库存
-        details: 自定义背包界面、装备布局、附近物品区与容器换皮共同形成核心交互体验。
-      - title: Grid 占格物品
-        details: 物品按宽高占据多个格位，容量管理不再只是“多几个格子”。
-      - title: 生存状态链
-        details: 体力、流血、骨折、感染、低健康视觉效果等机制共同塑造生存压力。
-      - title: 战术视角表现
-        details: 左右探头、越肩镜头、第一人称身体与趴下系统显著改变战斗节奏。
-      - title: 联机同步
-        details: 关键配置与状态采用服务端权威同步，减少客户端与服务器分裂。
-      - title: 模组兼容
-        details: 已围绕 Curios、TaCZ、Thirst 和菜单接管场景构建兼容策略。
+titleTemplate: BlockZ Wiki
+
+hero:
+  name: BlockZ
+  text: Minecraft Forge 1.20.1 硬核生存模组 Wiki
+  tagline: 围绕 DayZ 风格库存、占格系统、医疗状态、战术姿态与联机同步构建的完整文档站。
+  image:
+    src: /blockz-mark.svg
+    alt: BlockZ Logo
+  actions:
+    - theme: brand
+      text: 快速开始
+      link: /getting-started
+    - theme: alt
+      text: 系统总览
+      link: /systems
+    - theme: alt
+      text: 配置说明
+      link: /configuration
+
+features:
+  - title: DayZ 风格库存
+    details: 自定义背包界面、装备布局、附近物品区与容器换皮，共同组成 BlockZ 的核心交互体验。
+  - title: Grid 占格物品
+    details: 物品按宽高占据多个格位，容量管理不再只是“多几个槽位”，而是更接近真实空间分配。
+  - title: 生存状态链
+    details: 体力、流血、骨折、感染和低健康视觉反馈，共同塑造持续性的生存压力。
+  - title: 战术视角表现
+    details: 左右探头、越肩镜头、第一人称身体与趴下系统显著改变战斗与观察节奏。
+  - title: 联机同步
+    details: 关键配置和状态采用服务端权威同步，减少客户端与服务器分裂带来的判定问题。
+  - title: 模组兼容
+    details: 已围绕 Curios、TaCZ、Thirst 与菜单接管场景构建兼容策略，便于继续扩展整合包生态。
 ---
 
 # BlockZ 是什么？
@@ -45,16 +52,40 @@ BlockZ 不是单纯添加几个物品，而是在原版生存基础上重建了�
 
 ## 推荐阅读路径
 
-1. 先看 [快速开始](./getting-started.md)，了解玩法入口与常用命令。
-2. 再看 [系统总览](./systems.md)，建立对各子系统的整体认识。
-3. 随后看 [物品与装备](./items.md) 和 [配置说明](./configuration.md)。
-4. 如果你要做整合包或联动，再看 [兼容与架构](./compatibility.md)。
+1. 先看 [快速开始](/getting-started)，了解玩法入口与常用命令。
+2. 再看 [系统总览](/systems)，建立对各子系统的整体认识。
+3. 随后看 [物品与装备](/items) 和 [配置说明](/configuration)。
+4. 如果你要做整合包或联动，再看 [兼容与架构](/compatibility)。
 
 ## 项目技术栈
 
 - **Forge + Mixin**：深度定制菜单、渲染、输入与镜头行为。
 - **Capability + 网络同步**：实现玩家装备、状态与服务端配置同步。
 - **GeckoLib**：用于自定义实体与相关表现层能力。
+
+## 当前内容重点
+
+| 模块 | 当前重点 | 入口页面 |
+| --- | --- | --- |
+| 库存与占格 | DayZ 风格界面、多格物品、装备决定容量 | [系统总览](/systems) |
+| 生存状态 | 体力、流血、骨折、感染、低健康压迫感 | [系统总览](/systems) |
+| 配置调优 | 服务端权威配置、背包容量、镜头与探头参数 | [配置说明](/configuration) |
+| 联动兼容 | Curios、TaCZ、Thirst 与菜单接管策略 | [兼容与架构](/compatibility) |
+
+## 这个 Wiki 的写法原则
+
+> 这里优先记录**已经在当前项目源码中落地**、并且对玩法或联机稳定性有实际影响的系统，而不是只写概念设想。
+
+- **先讲结果**：先说明玩家实际会看到什么、用到什么。
+- **再讲原理**：再解释为什么要这样设计，它解决了什么问题。
+- **最后讲边界**：明确兼容策略、服务端权威和系统限制，避免误用。
+
+## 后续值得继续扩写的专题
+
+- **第一人称身体渲染**：适合单独拆一页说明渲染链与兼容策略。
+- **TaCZ 枪械联动**：可以继续细化成弹药、姿态、第一人称三个子章节。
+- **Curios 扩展槽接入**：适合说明数据驱动槽位、图标和分组布局。
+- **DayZ 丧尸与尸体系统**：可以补上实体行为、搜刮流程与配置项解释。
 
 ## 当前站点定位
 
