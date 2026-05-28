@@ -1,0 +1,17 @@
+{
+  "name": "blockz-wiki",
+  "private": true,
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "next",
+    "vue": "^3.5.13",
+    "vuepress": "next",
+    "vuepress-theme-hope": "next"
+  }
+}
