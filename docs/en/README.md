@@ -71,18 +71,3 @@ You are expected to balance clothing pockets, backpacks, vests, movement, lootin
 | Survival pressure | stamina, bleeding, fractures, infection, low-health feedback | [Systems Overview](/en/systems) |
 | Configuration tuning | server-authoritative rules, carrying balance, camera and lean parameters | [Configuration](/en/configuration) |
 | Compatibility | Curios, TaCZ, Thirst, and menu takeover boundaries | [Compatibility and Architecture](/en/compatibility) |
-
-## Documentation Principles
-
-> This wiki focuses on systems that already exist in the current codebase and that materially affect gameplay, interaction, or multiplayer stability.
-
-- **Start from player-facing behavior**: explain what the player sees and uses first.
-- **Then explain the design reason**: clarify why the system exists and what problem it solves.
-- **Then state the boundaries**: document compatibility assumptions, server authority, and limits clearly.
-
-## Good Future Topics
-
-- **First-person body rendering**: worth splitting into a dedicated rendering pipeline page.
-- **TaCZ integration**: can be expanded into ammo, posture, and first-person rendering sections.
-- **Curios slot integration**: a good place to explain data-driven slots, icons, and grouped layouts.
-- **DayZ zombies and corpse flow**: worth documenting entity behavior, corpse loot flow, and config knobs.

@@ -23,15 +23,41 @@ const zhSidebar = [
     text: "开始",
     items: [
       { text: "首页", link: "/" },
-      { text: "快速开始", link: "/getting-started" }
+      { text: "快速开始", link: "/getting-started" },
+      { text: "运行环境", link: "/getting-started#runtime" },
+      { text: "默认按键", link: "/getting-started#keybindings" },
+      { text: "第一次进入世界", link: "/getting-started#first-steps" }
     ]
   },
   {
-    text: "核心内容",
+    text: "玩法与系统",
     items: [
       { text: "系统总览", link: "/systems" },
       { text: "物品与装备", link: "/items" },
+      { text: "推荐搭配", link: "/getting-started#recommended-mods" }
+    ]
+  },
+  {
+    text: "管理与配置",
+    items: [
+      { text: "管理命令", link: "/getting-started#commands" },
+      { text: "命令使用建议", link: "/getting-started#command-notes" },
       { text: "配置说明", link: "/configuration" },
+      { text: "配置文件位置", link: "/configuration#file-paths" },
+      { text: "主配置文件", link: "/configuration#main-config" },
+      { text: "背包与容量", link: "/configuration#storage" },
+      { text: "体力与移动", link: "/configuration#stamina" },
+      { text: "探头与镜头", link: "/configuration#lean-camera" },
+      { text: "第三人称与注视", link: "/configuration#third-person-focus" },
+      { text: "视觉效果", link: "/configuration#visual-effects" },
+      { text: "占格规则文件", link: "/configuration#grid-rules" },
+      { text: "丧尸配置", link: "/configuration#zombie-config" },
+      { text: "调参顺序", link: "/configuration#tuning-order" }
+    ]
+  },
+  {
+    text: "兼容与联动",
+    items: [
       { text: "兼容与架构", link: "/compatibility" }
     ]
   }
@@ -42,15 +68,31 @@ const enSidebar = [
     text: "Start Here",
     items: [
       { text: "Home", link: "/en/" },
-      { text: "Getting Started", link: "/en/getting-started" }
+      { text: "Getting Started", link: "/en/getting-started" },
+      { text: "Runtime Environment", link: "/en/getting-started#runtime" },
+      { text: "Default Keybindings", link: "/en/getting-started#keybindings" },
+      { text: "First Steps", link: "/en/getting-started#first-steps" }
     ]
   },
   {
-    text: "Core Topics",
+    text: "Gameplay and Systems",
     items: [
       { text: "Systems Overview", link: "/en/systems" },
       { text: "Items and Equipment", link: "/en/items" },
-      { text: "Configuration", link: "/en/configuration" },
+      { text: "Recommended Mods", link: "/en/getting-started#recommended-mods" }
+    ]
+  },
+  {
+    text: "Administration and Tuning",
+    items: [
+      { text: "Admin Commands", link: "/en/getting-started#commands" },
+      { text: "Command Notes", link: "/en/getting-started#command-notes" },
+      { text: "Configuration", link: "/en/configuration" }
+    ]
+  },
+  {
+    text: "Compatibility",
+    items: [
       { text: "Compatibility and Architecture", link: "/en/compatibility" }
     ]
   }
