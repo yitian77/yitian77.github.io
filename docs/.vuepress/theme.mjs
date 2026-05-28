@@ -3,7 +3,7 @@ import { zhSidebar } from "./sidebar/zh.mjs";
 
 export const blockzTheme = hopeTheme({
   repo: "yitian77/BlockZ",
-  docsDir: "wiki/docs",
+  docsDir: "docs",
   navbar: [
     "/",
     "/getting-started.html",
