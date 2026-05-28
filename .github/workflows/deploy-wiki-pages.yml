@@ -10,20 +10,51 @@ on:
       - '.github/workflows/deploy-wiki-pages.yml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: VitePress Deploy
-        uses: IT4Change/vuepress-build-and-deploy@master
-        env:
-          ACCESS_TOKEN: ${{ secrets.PERSONAL_SECRET }}
-          TARGET_REPO: yitian77/yitian77.github.io
-          TARGET_BRANCH: gh_pages
-          BUILD_SCRIPT: |
-            npm install
-            npm run build
-          BUILD_DIR: docs/.vitepress/dist/
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build VitePress site
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
