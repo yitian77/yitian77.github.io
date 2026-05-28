@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>物品与装备 | BlockZ Wiki</title>
+  <meta name="description" content="BlockZ 物品与装备总览，涵盖背包、服装、医疗用品与系统物品。">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">BZ</div>
+        <div>
+          <h1 class="brand-title">BlockZ Wiki</h1>
+          <p class="brand-subtitle">Forge 1.20.1 生存模组文档站</p>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-title">开始</p>
+        <nav class="sidebar-links">
+          <a href="index.html" data-nav-link data-close-menu>首页</a>
+          <a href="getting-started.html" data-nav-link data-close-menu>快速开始</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-title">核心内容</p>
+        <nav class="sidebar-links">
+          <a href="systems.html" data-nav-link data-close-menu>系统总览</a>
+          <a href="items.html" data-nav-link data-close-menu>物品与装备</a>
+          <a href="configuration.html" data-nav-link data-close-menu>配置说明</a>
+          <a href="compatibility.html" data-nav-link data-close-menu>兼容与架构</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-note">
+        本页主要说明“物品类别在玩法中的职责”，不是逐个贴配方或掉落表。
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <button class="menu-toggle" type="button" data-menu-toggle>菜单</button>
+        <p class="topbar-title">BlockZ / 物品与装备</p>
+      </div>
+
+      <div class="content">
+        <header class="page-header">
+          <div class="eyebrow">Items & Equipment</div>
+          <h1>物品与装备</h1>
+          <p>
+            BlockZ 的物品设计重点并不在于数量堆叠，而在于每类物品如何参与“携行能力、状态管理与战术恢复”。
+            本页基于当前注册物品整理出主要类别和作用。
+          </p>
+        </header>
+
+        <section class="section">
+          <div class="page-header">
+            <h2>背包类</h2>
+            <p>背包类是最直观的容量扩展来源，但并不是唯一来源。</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>注册名</th>
+                  <th>中文说明</th>
+                  <th>玩法定位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>backpack_coyote</code></td>
+                  <td>土狼背包</td>
+                  <td>偏大型携行装备，适合中后期长期搜刮与补给搬运。</td>
+                </tr>
+                <tr>
+                  <td><code>backpack_alice</code></td>
+                  <td>Alice 背包</td>
+                  <td>经典大容量背包，用于大规模携行与整合包中的长期探索。</td>
+                </tr>
+                <tr>
+                  <td><code>backpack_czech</code></td>
+                  <td>捷克背包</td>
+                  <td>中等容量，适合作为过渡装备。</td>
+                </tr>
+                <tr>
+                  <td><code>backpack_czechpouch</code></td>
+                  <td>捷克挂包</td>
+                  <td>容量更小，但适合早期过渡或轻装配置。</td>
+                </tr>
+                <tr>
+                  <td><code>backpack_patrolpack</code></td>
+                  <td>巡逻包</td>
+                  <td>轻便路线用背包，强调灵活性而非极限容量。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout info section">
+            <h3 class="callout-title">为什么背包系统重要？</h3>
+            <p>
+              因为 BlockZ 的空间不是抽象数值，而是具体到可放几格、能放多大物品的网格结构。
+              背包大小会直接决定你的搜刮策略、战斗补给量与行进路线。
+            </p>
+          </div>
+        </section>
+
+        <section class="section grid two">
+          <article class="card">
+            <h2>服装类</h2>
+            <p>
+              当前服装系统包含背心、手套、上衣、裤子与鞋子。其意义不仅是外观，而是通过衣物槽位和口袋容量参与生存系统。
+            </p>
+            <ul class="clean">
+              <li><strong>背心：</strong>常作为补充容量与战术携行层。</li>
+              <li><strong>上衣 / 裤子：</strong>可提供额外口袋空间，强化基础携行能力。</li>
+              <li><strong>手套 / 鞋子：</strong>当前更多承担装备体系完整性与后续扩展位置。</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Curios 视角下的意义</h2>
+            <p>
+              在接入 Curios 后，部分装备并不是孤立存在，而是会被纳入额外装备槽分组、排序与图标渲染逻辑中。
+              这保证了扩展装备仍然能保持 BlockZ 的统一界面体验。
+            </p>
+          </article>
+        </section>
+
+        <section class="section">
+          <div class="page-header">
+            <h2>医疗用品</h2>
+            <p>医疗物资是 BlockZ 生存循环的核心消耗品之一。</p>
+          </div>
+          <div class="grid two">
+            <article class="card">
+              <h3><code>bandage</code> · 绷带</h3>
+              <p>用于处理流血等护理场景，是最基础也最重要的战后恢复物资之一。</p>
+            </article>
+            <article class="card">
+              <h3><code>rags</code> · 破布</h3>
+              <p>作为低配止血材料，通常承担早期求生或物资不足时的应急角色。</p>
+            </article>
+            <article class="card">
+              <h3><code>splint</code> · 夹板</h3>
+              <p>用于处理骨折类状态，体现 BlockZ 将“跌落惩罚”转化为后续恢复流程的设计思路。</p>
+            </article>
+            <article class="card">
+              <h3><code>morphine_syringe</code> / <code>codeine_pills</code></h3>
+              <p>用于止痛或状态缓解，说明项目的医疗体系已经不局限于“单一回血道具”。</p>
+            </article>
+          </div>
+          <div class="callout success section">
+            <h3 class="callout-title">设计原理</h3>
+            <p>
+              把医疗物资拆成止血、骨折处理、止痛等不同角色，可以让玩家在战斗前准备、战斗后恢复和资源搜集之间形成更自然的消耗闭环。
+            </p>
+          </div>
+        </section>
+
+        <section class="section grid two">
+          <article class="card">
+            <h2>实体与测试相关物品</h2>
+            <p>
+              当前项目注册了 <code>dayz_zombie_spawn_egg</code>，用于生成 DayZ 丧尸实体，便于测试实体行为、掉落与搜刮流程。
+            </p>
+          </article>
+
+          <article class="card">
+            <h2>系统物品</h2>
+            <p>
+              <code>lock_item</code> 代表项目内部用于支撑系统逻辑或特定交互的物品类别。这类物品在 Wiki 中通常不需要过度包装成普通战利品，
+              但应该保留说明，方便后续维护者理解它们存在的原因。
+            </p>
+          </article>
+        </section>
+
+        <section class="section">
+          <div class="page-header">
+            <h2>物品系统的扩展方式</h2>
+            <p>BlockZ 的物品兼容思路，重点不是为每个外部模组硬编码，而是提供可持续扩展的规则层。</p>
+          </div>
+          <div class="grid two">
+            <article class="card">
+              <h3>占格尺寸规则</h3>
+              <p>
+                物品的宽高可以通过规则文件或命令写入，因此其他模组物品也能接入 DayZ 风格的占格系统。
+              </p>
+            </article>
+            <article class="card">
+              <h3>容量规则</h3>
+              <p>
+                物品是否具备内部容量，以及容量有多大，也可以通过配置规则扩展，而不必每次都新增专门 Java 类。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="callout warn">
+            <h3 class="callout-title">关于模型与展示</h3>
+            <p>
+              项目近期已经引入了自定义物品模型加载方案，用于解决部分 3D 物品模型在原版限制下的显示问题。
+              这意味着未来 Wiki 可以继续补充“3D 物品展示”和“资源制作规范”专题。
+            </p>
+          </div>
+        </section>
+
+        <div class="page-nav">
+          <a href="systems.html">
+            <strong>上一页：系统总览</strong>
+            返回系统层面的整体理解。
+          </a>
+          <a href="configuration.html">
+            <strong>下一页：配置说明</strong>
+            查看 BlockZ 的主要配置分区、调参建议和联机注意事项。
+          </a>
+        </div>
+
+        <footer class="footer">
+          本页物品列表基于当前源码中的注册内容整理，后续可继续补充更细的掉落、用途与美术展示。
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

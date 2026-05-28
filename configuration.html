@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>配置说明 | BlockZ Wiki</title>
+  <meta name="description" content="BlockZ 配置说明，介绍 GUI、背包、体力、探头、相机、第三人称、屏幕效果与丧尸配置。">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">BZ</div>
+        <div>
+          <h1 class="brand-title">BlockZ Wiki</h1>
+          <p class="brand-subtitle">Forge 1.20.1 生存模组文档站</p>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-title">开始</p>
+        <nav class="sidebar-links">
+          <a href="index.html" data-nav-link data-close-menu>首页</a>
+          <a href="getting-started.html" data-nav-link data-close-menu>快速开始</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-title">核心内容</p>
+        <nav class="sidebar-links">
+          <a href="systems.html" data-nav-link data-close-menu>系统总览</a>
+          <a href="items.html" data-nav-link data-close-menu>物品与装备</a>
+          <a href="configuration.html" data-nav-link data-close-menu>配置说明</a>
+          <a href="compatibility.html" data-nav-link data-close-menu>兼容与架构</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-note">
+        BlockZ 的很多配置并不只是客户端美化参数，而会直接影响联机玩法和交互判定。
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <button class="menu-toggle" type="button" data-menu-toggle>菜单</button>
+        <p class="topbar-title">BlockZ / 配置说明</p>
+      </div>
+
+      <div class="content">
+        <header class="page-header">
+          <div class="eyebrow">Configuration</div>
+          <h1>配置说明</h1>
+          <p>
+            BlockZ 的配置分为界面、背包、体力、相机、探头、第三人称、视觉效果、主菜单与丧尸行为等多个模块。
+            本页按当前源码与 <code>blockz-common.toml</code> / <code>dayz_zombie.toml</code> 的结构进行整理。
+          </p>
+        </header>
+
+        <section class="section">
+          <div class="callout info">
+            <h3 class="callout-title">首先要理解的一点</h3>
+            <p>
+              BlockZ 已经把很多配置纳入<strong>服务端权威同步</strong>链路。也就是说，在联机环境中，
+              玩家客户端看到和使用的关键参数，往往来自服务器快照，而不是本地配置文件本身。
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="page-header">
+            <h2>主配置文件：blockz-common.toml</h2>
+            <p>该文件覆盖 UI、背包、体力、相机与显示层等大部分常用功能。</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>分区</th>
+                  <th>作用</th>
+                  <th>建议优先级</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>[gui.grid]</code></td>
+                  <td>控制占格系统的列数、行数与总开关。</td>
+                  <td>高</td>
+                </tr>
+                <tr>
+                  <td><code>[gui.ui]</code></td>
+                  <td>控制 DayZ UI、HUD、医疗状态系统与基础口袋数。</td>
+                  <td>高</td>
+                </tr>
+                <tr>
+                  <td><code>[backpacks]</code></td>
+                  <td>控制不同背包、背心、衣服、裤子的容量参数。</td>
+                  <td>高</td>
+                </tr>
+                <tr>
+                  <td><code>[corpse]</code></td>
+                  <td>控制尸体系统是否启用以及消失时间。</td>
+                  <td>中</td>
+                </tr>
+                <tr>
+                  <td><code>[stamina.stamina]</code></td>
+                  <td>控制体力系统与消耗/恢复曲线。</td>
+                  <td>高</td>
+                </tr>
+                <tr>
+                  <td><code>[lean.lean]</code></td>
+                  <td>控制左右探头的启用、偏移量与动画时长。</td>
+                  <td>高</td>
+                </tr>
+                <tr>
+                  <td><code>[camera_motion]</code></td>
+                  <td>控制步态镜头摇晃与原版摇晃替换。</td>
+                  <td>中</td>
+                </tr>
+                <tr>
+                  <td><code>[focus_zoom]</code></td>
+                  <td>控制注视缩放的开关与视野倍率。</td>
+                  <td>中</td>
+                </tr>
+                <tr>
+                  <td><code>[third_person_camera]</code></td>
+                  <td>控制越肩相机的偏移、平滑与默认肩位。</td>
+                  <td>中</td>
+                </tr>
+                <tr>
+                  <td><code>[screen_effects]</code></td>
+                  <td>控制暗角与低健康视觉效果。</td>
+                  <td>中</td>
+                </tr>
+                <tr>
+                  <td><code>[atmosphere]</code></td>
+                  <td>控制冷蓝雾气与去饱和氛围。</td>
+                  <td>低</td>
+                </tr>
+                <tr>
+                  <td><code>[mainmenu]</code> / <code>[mainmenu_posters]</code></td>
+                  <td>控制自定义主菜单、背景切换与宣传图内容。</td>
+                  <td>低</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="section grid two">
+          <article class="card">
+            <h2>最常调整的 5 个参数</h2>
+            <ul class="clean">
+              <li><code>gui.ui.initial_pocket_slots</code>：决定玩家开局可用口袋数。</li>
+              <li><code>gui.ui.enable_dayz_inventory</code>：决定是否启用 DayZ 风格库存界面。</li>
+              <li><code>stamina.stamina.enable</code>：决定是否启用体力系统。</li>
+              <li><code>lean.lean.enable</code>：决定是否启用左右探头。</li>
+              <li><code>third_person_camera.enable_third_person_shoulder_camera</code>：决定是否启用越肩视角。</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>最容易影响手感的 5 个参数</h2>
+            <ul class="clean">
+              <li><code>stamina.stamina.sprint_cost</code></li>
+              <li><code>stamina.stamina.recovery_rate</code></li>
+              <li><code>lean.lean.offset</code></li>
+              <li><code>camera_motion.walk_sway_strength</code></li>
+              <li><code>third_person_camera.third_person_shoulder_distance_offset</code></li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="section">
+          <div class="page-header">
+            <h2>背包与容量配置</h2>
+            <p>这些参数决定装备体系在玩法中的实际价值。</p>
+          </div>
+          <div class="grid two">
+            <article class="card">
+              <h3>开局容量</h3>
+              <p>
+                <code>initial_pocket_slots</code> 决定玩家没有背包时的初始口袋规模。这个值越低，越强调前期搜刮压力与衣物价值。
+              </p>
+            </article>
+            <article class="card">
+              <h3>装备容量</h3>
+              <p>
+                <code>backpack_coyote_slots</code>、<code>vest_0_slots</code>、<code>shirt_slots</code> 等参数，决定各装备在整体资源循环中的层级定位。
+              </p>
+            </article>
+          </div>
+          <div class="callout success section">
+            <h3 class="callout-title">调参原则</h3>
+            <p>
+              如果你希望玩法更像 DayZ，建议保留较少开局口袋，并让衣服、裤子和背心提供明显但有限的中期价值，
+              把大背包留作明确的阶段性提升。
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="page-header">
+            <h2>体力与移动配置</h2>
+            <p>体力系统会直接改变跑图、追击、撤离和涉水时的节奏。</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>参数</th>
+                  <th>含义</th>
+                  <th>调高后的倾向</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>max_capacity</code></td>
+                  <td>最大体力值</td>
+                  <td>提升持续运动能力</td>
+                </tr>
+                <tr>
+                  <td><code>sprint_cost</code></td>
+                  <td>疾跑每 tick 消耗</td>
+                  <td>更强调冲刺取舍</td>
+                </tr>
+                <tr>
+                  <td><code>jump_cost</code></td>
+                  <td>跳跃消耗</td>
+                  <td>更惩罚高频跳跃位移</td>
+                </tr>
+                <tr>
+                  <td><code>recovery_rate</code></td>
+                  <td>恢复速度</td>
+                  <td>更快回到可战斗状态</td>
+                </tr>
+                <tr>
+                  <td><code>water_penalty</code></td>
+                  <td>水中移动额外惩罚</td>
+                  <td>更强调地形选择</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="section grid two">
+          <article class="card">
+            <h2>探头与镜头参数</h2>
+            <ul class="clean">
+              <li><code>lean.lean.offset</code>：控制探头横向偏移。</li>
+              <li><code>lean.lean.angle_degrees</code>：控制侧倾角度。</li>
+              <li><code>lean.lean.animation_duration</code>：控制进出探头动画时长。</li>
+              <li><code>camera_motion.replace_vanilla_walk_bobbing</code>：是否完全替换原版走路摇晃。</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>第三人称与注视参数</h2>
+            <ul class="clean">
+              <li><code>focus_zoom.enable_focus_zoom</code>：注视缩放总开关。</li>
+              <li><code>focus_zoom.focus_fov_multiplier_walk</code>：步行注视倍率。</li>
+              <li><code>third_person_camera.third_person_shoulder_horizontal_offset</code>：肩位横向偏移。</li>
+              <li><code>third_person_camera.third_person_shoulder_switch_smoothing</code>：切肩平滑速度。</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="section">
+          <div class="page-header">
+            <h2>视觉效果配置</h2>
+            <p>视觉配置既影响氛围，也涉及可访问性。</p>
+          </div>
+          <div class="grid two">
+            <article class="card">
+              <h3>暗角与低健康效果</h3>
+              <p>
+                <code>[screen_effects]</code> 里的暗角和低健康视觉效果更接近生存氛围表达，但对部分玩家来说也可能更有压迫感。
+              </p>
+            </article>
+            <article class="card">
+              <h3>冷蓝雾气</h3>
+              <p>
+                <code>[atmosphere]</code> 主要用于整体世界氛围塑造。它不会直接改变玩法判定，但会显著影响画面观感与地图情绪。
+              </p>
+            </article>
+          </div>
+          <div class="callout warn section">
+            <h3 class="callout-title">可访问性提醒</h3>
+            <p>
+              低健康视觉效果和较强暗角可能改变对比度与色彩感受。若你的整合包面向更广玩家群体，建议在默认配置中适当保守。
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="page-header">
+            <h2>丧尸配置：dayz_zombie.toml</h2>
+            <p>该配置负责 DayZ 丧尸的感知、战斗属性与夜晚强化行为。</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>分区</th>
+                  <th>作用</th>
+                  <th>典型用途</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>sense</code></td>
+                  <td>发现距离、索敌间隔、目标记忆与呼叫范围</td>
+                  <td>塑造潜行容错与夜战压力</td>
+                </tr>
+                <tr>
+                  <td><code>combat</code></td>
+                  <td>生命、攻击、移速、护甲与流血概率</td>
+                  <td>决定正面对抗强度</td>
+                </tr>
+                <tr>
+                  <td><code>state</code></td>
+                  <td>尸体停留时间与夜晚强化倍率</td>
+                  <td>控制尸体存在感与昼夜差异</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="section grid two">
+          <article class="callout info">
+            <h3 class="callout-title">联机环境建议</h3>
+            <p>
+              如果你在服务器中使用 BlockZ，建议把会改变交互节奏和战斗判定的参数统一在服务端调整，不要依赖玩家自行修改客户端配置。
+            </p>
+          </article>
+
+          <article class="callout success">
+            <h3 class="callout-title">整合包环境建议</h3>
+            <p>
+              如果你的整合包同时使用 TaCZ、Thirst 与其他装备模组，建议优先稳定 UI、背包容量、体力与越肩相机，再逐步增加视觉表现强度。
+            </p>
+          </article>
+        </section>
+
+        <div class="page-nav">
+          <a href="items.html">
+            <strong>上一页：物品与装备</strong>
+            返回装备、背包与医疗物资说明页。
+          </a>
+          <a href="compatibility.html">
+            <strong>下一页：兼容与架构</strong>
+            查看 BlockZ 与 TaCZ / Curios / Thirst 的关系，以及内部技术结构。
+          </a>
+        </div>
+
+        <footer class="footer">
+          本页配置章节以当前项目中的 TOML 与配置类命名为基准，可继续按需要追加更细的“推荐值模板”。
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
