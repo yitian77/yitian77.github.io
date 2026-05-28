@@ -6,7 +6,7 @@ export default defineUserConfig({
   lang: "zh-CN",
   title: "BlockZ Wiki",
   description: "BlockZ 模组文档站，介绍核心系统、配置、物品与兼容方案。",
-  /: process.env.GITHUB_ACTIONS ? "/BlockZ/" : "/",
+  base: "/",
   bundler: viteBundler(),
   theme: blockzTheme
 });
