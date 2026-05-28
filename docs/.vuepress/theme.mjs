@@ -2,7 +2,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 import { zhSidebar } from "./sidebar/zh.mjs";
 
 export const blockzTheme = hopeTheme({
-  repo: "yitian77/BlockZ",
+  repo: "yitian77/yitian77.github.io",
   docsDir: "docs",
   navbar: [
     "/",

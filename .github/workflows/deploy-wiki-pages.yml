@@ -5,7 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'wiki/**'
+      - 'docs/**'
+      - 'package.json'
       - '.github/workflows/deploy-wiki-pages.yml'
   workflow_dispatch:
 
@@ -20,9 +21,9 @@ jobs:
         uses: IT4Change/vuepress-build-and-deploy@master
         env:
           ACCESS_TOKEN: ${{ secrets.PERSONAL_SECRET }}
-          TARGET_REPO: yitian77/BlockZ
+          TARGET_REPO: yitian77/yitian77.github.io
           TARGET_BRANCH: gh_pages
           BUILD_SCRIPT: |
-            npm --prefix wiki install
-            npm --prefix wiki run build
-          BUILD_DIR: wiki/docs/.vuepress/dist/
+            npm install
+            npm run build
+          BUILD_DIR: docs/.vuepress/dist/
